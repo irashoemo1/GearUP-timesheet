@@ -56,8 +56,8 @@ const Sidebar = () => {
                 </Typography>
                 {isNonMobileScreens && (
                     <ul>
-                        <li><a href='http://localhost:3000/home'>Home</a></li>
-                        { employee.role === "employee" && <li><a href={`http://localhost:3000/${employee.employeeNumber}/history`}>History</a></li>}
+                        <li><a href='/home'>Home</a></li>
+                        { employee.role === "employee" && <li><a href={`/${employee.employeeNumber}/history`}>History</a></li>}
                     </ul>
 
                 )}
@@ -119,13 +119,13 @@ const Sidebar = () => {
                         <ul>   
                             <li>
                                 <IconButton onClick={() => setIsMobileMenuToggled(!isMobileMenuToggled)}>
-                                    <a href='http://localhost:3000/home'>Home</a>
+                                    <a href='/home'>Home</a>
                                 </IconButton>
                             </li>
                             { employee.role === "employee" && 
                                 <li>
                                     <IconButton onClick={() => setIsMobileMenuToggled(!isMobileMenuToggled)}>
-                                    <a href={`http://localhost:3000/${employee.employeeNumber}/history`}>History</a>
+                                    <a href={`/${employee.employeeNumber}/history`}>History</a>
                                     </IconButton>
                                 </li>
                             }

@@ -10,7 +10,7 @@ const AdminView =  () => {
     
     const getEmployeesTimesheets = async () => {
         const response = await fetch(
-            `http://localhost:3001/timesheet/`,
+            `${process.env.REACT_APP_BASE_URL}/timesheet/`,
             {
                 method: "GET",
                 headers: {Authorization: `Bearer ${token}`}

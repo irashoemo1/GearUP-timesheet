@@ -274,7 +274,7 @@ const MyTimesheet = () => {
 
     const handleTimesheet = async (values) => {
         console.log(values)
-        const response = await fetch(`http://localhost:3001/timesheet/createTimesheet`, {
+        const response = await fetch(`${process.env.REACT_APP_BASE_URL}/timesheet/createTimesheet`, {
             method: "POST",
             headers: {Authorization: `Bearer ${token}`, "Content-Type": "application/json"},
             body: JSON.stringify(values)

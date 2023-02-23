@@ -11,7 +11,7 @@ const TimesheetsWidget = ({userId}) => {
 
     const getEmployeeTimesheets = async () => {
         const response = await fetch(
-            `http://localhost:3001/timesheet/${userId}/history`,
+            `${process.env.REACT_APP_BASE_URL}/timesheet/${userId}/history`,
             {
                 method: "GET",
                 headers: {Authorization: `Bearer ${token}`}
