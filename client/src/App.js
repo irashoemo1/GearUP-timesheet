@@ -15,7 +15,7 @@ function App() {
 
   return (
     <div className="app">
-      <BrowserRouter basename='/GearUP-timesheet'>
+      <BrowserRouter basename='/'>
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <Routes>
