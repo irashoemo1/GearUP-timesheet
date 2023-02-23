@@ -1,0 +1,44 @@
+div > #sidebar, #sidebar{
+    /* background-color: gray; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 720px;
+    height: 100%;
+    width: 19.75em;
+    text-align: center;
+}
+
+@media screen and (max-width: 1680px){
+    #sidebar {
+        width: 24em;
+    }
+}
+
+@media screen and (max-width: 1280px)
+{
+    #sidebar {
+        margin-left: -24em;
+        /* box-shadow: 0 0 5em 0 rgb(0 0 0 / 18%);
+        height: 100%;
+        left: 0;
+        position: fixed;
+        top: 0;
+        z-index: 10000; */
+    }
+}
+
+ul{
+    padding: 0;
+}
+
+li{
+    list-style: none;
+}
+
+li a{
+    text-decoration: none;
+    color: inherit;
+}
+
+
