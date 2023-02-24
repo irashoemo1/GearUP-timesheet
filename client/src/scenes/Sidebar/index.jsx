@@ -17,7 +17,7 @@ import {
 } from "@mui/icons-material";
 import { useDispatch, useSelector } from 'react-redux';
 import { setMode, setLogout } from 'state';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 
 const Sidebar = () => {
@@ -56,8 +56,8 @@ const Sidebar = () => {
                 </Typography>
                 {isNonMobileScreens && (
                     <ul>
-                        <li><a href='/home'>Home</a></li>
-                        { employee.role === "employee" && <li><a href={`/${employee.employeeNumber}/history`}>History</a></li>}
+                        <li><Link to="/home">Home</Link></li>
+                        { employee.role === "employee" && <li><Link to={`/${employee.employeeNumber}/history`}>History</Link></li>}
                     </ul>
 
                 )}
@@ -119,13 +119,13 @@ const Sidebar = () => {
                         <ul>   
                             <li>
                                 <IconButton onClick={() => setIsMobileMenuToggled(!isMobileMenuToggled)}>
-                                    <a href='/home'>Home</a>
+                                    <Link to='/home'>Home</Link>
                                 </IconButton>
                             </li>
                             { employee.role === "employee" && 
                                 <li>
                                     <IconButton onClick={() => setIsMobileMenuToggled(!isMobileMenuToggled)}>
-                                    <a href={`/${employee.employeeNumber}/history`}>History</a>
+                                    <Link to={`/${employee.employeeNumber}/history`}>History</Link>
                                     </IconButton>
                                 </li>
                             }
