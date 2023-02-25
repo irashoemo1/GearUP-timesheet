@@ -78,9 +78,9 @@ td > input{
     background-color: white;
 } */
 
-tr:nth-child(1)>th:nth-child(1){
+/* tr:nth-child(1)>th:nth-child(1){
     border-bottom: none;
-}
+} */
 
 tr:nth-child(2)>th:nth-child(1){
     border-top: none;

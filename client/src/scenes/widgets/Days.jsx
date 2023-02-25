@@ -65,7 +65,16 @@ const Days = (props) => {
                                 name="employeeNumber"
                                 error={Boolean(touched.employeeNumber) && Boolean(errors.employeeNumber)}
                                 helperText={touched.employeeNumber && errors.employeeNumber}
-                            />  
+                            /> 
+                            <TextField 
+                                label="Period Starting"
+                                onBlur={handleBlur}
+                                onChange={handleChange}
+                                value={values.periodStarting}
+                                name="periodStarting"
+                                error={Boolean(touched.periodStarting) && Boolean(errors.periodStarting)}
+                                helperText={touched.periodStarting && errors.periodStarting}
+                            />   
                             <TextField 
                                 label="Period Ending"
                                 onBlur={handleBlur}
@@ -94,7 +103,7 @@ const Days = (props) => {
                                         <th>Wed</th>
                                         <th>Thu</th>
                                     </tr>
-                                    <tr>
+                                    {/* <tr>
                                         <th></th>
                                         <th>4/10</th>
                                         <th>4/11</th>
@@ -110,7 +119,7 @@ const Days = (props) => {
                                         <th>4/21</th>
                                         <th>4/22</th>
                                         <th>4/23</th>
-                                    </tr>
+                                    </tr> */}
                                     <tr>
                                         <th>In</th>
                                         <td><TextField 

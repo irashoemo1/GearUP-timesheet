@@ -24,6 +24,7 @@ const AdminView =  () => {
         getEmployeesTimesheets();
     }, []) //eslint-disable-line react-hooks/exhaustive-deps
 
+    console.log(timesheets)
     return (
         <>
             {timesheets.length !== 0 && (Object.values(timesheets).map(
@@ -32,6 +33,7 @@ const AdminView =  () => {
                     firstName,
                     lastName,
                     employeeNumber,
+                    periodStarting,
                     periodEnding,
                     friday1,
                     saturday1,
@@ -53,6 +55,7 @@ const AdminView =  () => {
                         firstName={firstName}
                         lastName={lastName}
                         employeeNumber={employeeNumber}
+                        periodStarting={periodStarting}
                         periodEnding={periodEnding}
                         friday1={friday1}
                         saturday1={saturday1}

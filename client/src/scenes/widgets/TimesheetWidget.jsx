@@ -7,6 +7,7 @@ const TimesheetWidget = ({
     firstName,
     lastName,
     employeeNumber,
+    periodStarting,
     periodEnding,
     friday1,
     saturday1,
@@ -23,6 +24,7 @@ const TimesheetWidget = ({
     wednesday2,
     thursday2,
 }) => {
+    console.log(lastName)
     return (
         <TimesheetWrapper key={_id}>
             <Box
@@ -41,6 +43,11 @@ const TimesheetWidget = ({
                     <TextField 
                         label="Employee Number"
                         value={employeeNumber}
+                        sx={{gridColumn: "span 2"}}
+                    />
+                    <TextField 
+                        label="Period Starting"
+                        value={periodStarting.toString().slice(0, 10)}
                         sx={{gridColumn: "span 2"}}
                     />  
                     <TextField 
@@ -68,7 +75,7 @@ const TimesheetWidget = ({
                                     <th>Wed</th>
                                     <th>Thu</th>
                                 </tr>
-                                <tr>
+                                {/* <tr>
                                     <th></th>
                                     <th>4/10</th>
                                     <th>4/11</th>
@@ -84,7 +91,7 @@ const TimesheetWidget = ({
                                     <th>4/21</th>
                                     <th>4/22</th>
                                     <th>4/23</th>
-                                </tr>
+                                </tr> */}
                                 <tr>
                                     <th>In</th>
                                     <td><TextField        

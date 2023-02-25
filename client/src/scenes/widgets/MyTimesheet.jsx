@@ -12,6 +12,7 @@ const timesheetSchema = yup.object().shape({
     firstName: yup.string().required("required"),
     lastName: yup.string().required("required"),
     employeeNumber: yup.string().required("required"),
+    periodStarting: yup.date().required("required"),
     periodEnding: yup.date().required("required"),
     friday1: yup.object().shape({
         day: yup.string(),
@@ -146,6 +147,7 @@ const initialValuesTimesheet = {
     firstName: "",
     lastName: "",
     employeeNumber: "",
+    periodStarting: "",
     periodEnding: "",
     friday1: {
         clockIn1: '',

@@ -22,9 +22,14 @@ const TimesheetsWidget = ({userId}) => {
     }
 
     useEffect(() => {
+        dispatch(setTimesheets({timesheets: []}))//seems like this fixed the problem of pulling up other's timesheets
         getEmployeeTimesheets();
     }, []) //eslint-disable-line react-hooks/exhaustive-deps
 
+    console.log(userId)
+    console.log(timesheets)
+    // even when i go to Ira's it gives me kristines timesheet
+    // why am i looping through one timesheet instead of multiple?
     return (
         <>
         {Object.values(timesheets).map(
@@ -33,6 +38,7 @@ const TimesheetsWidget = ({userId}) => {
                 firstName,
                 lastName,
                 employeeNumber,
+                periodStarting,
                 periodEnding,
                 friday1,
                 saturday1,
@@ -48,12 +54,14 @@ const TimesheetsWidget = ({userId}) => {
                 tuesday2,
                 wednesday2,
                 thursday2,
+                
             }) => (
                 <TimesheetWidget
-                    key={_id} 
+                    key={_id}
                     firstName={firstName}
                     lastName={lastName}
                     employeeNumber={employeeNumber}
+                    periodStarting={periodStarting}
                     periodEnding={periodEnding}
                     friday1={friday1}
                     saturday1={saturday1}
@@ -68,7 +76,7 @@ const TimesheetsWidget = ({userId}) => {
                     monday2={monday2}
                     tuesday2={tuesday2}
                     wednesday2={wednesday2}
-                    thursday2={thursday2}
+                    thursday2={thursday2} 
                 />
             )
         )}
