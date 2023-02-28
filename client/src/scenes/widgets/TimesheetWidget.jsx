@@ -24,6 +24,13 @@ const TimesheetWidget = ({
     wednesday2,
     thursday2,
 }) => {
+
+    const dateCut = (date) => {
+        if(date){
+            return date.toString().slice(0, 10)
+        }
+        return date
+    }
     return (
         <TimesheetWrapper key={_id}>
             <Box
@@ -46,12 +53,12 @@ const TimesheetWidget = ({
                     />
                     <TextField 
                         label="Period Starting"
-                        value={periodStarting.toString().slice(0, 10)}
+                        value={dateCut(periodStarting)}
                         sx={{gridColumn: "span 2"}}
                     />  
                     <TextField 
                         label="Period Ending"
-                        value={periodEnding.toString().slice(0, 10)}
+                        value={dateCut(periodEnding)}
                         sx={{gridColumn: "span 2"}}
                     />
                     {friday1 && (
