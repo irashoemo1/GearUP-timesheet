@@ -18,6 +18,10 @@ const TimesheetSchema = new mongoose.Schema(
             type: String,
             required: true
         },
+        periodStarting: {
+            type: Date,
+            required: true
+        },
         periodEnding: {
             type: Date,
             required: true

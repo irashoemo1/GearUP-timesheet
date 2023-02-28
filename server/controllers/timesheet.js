@@ -21,6 +21,18 @@ export const getEmployeesTimesheets = async (req, res) => {
     }
 }
 
+export const getEmployeesTimesheetsByDate = async (req, res) => {
+    try{
+        console.log(req.query)
+        // const timesheets = await Timesheet.find();
+        // res.status(200).json(timesheets);
+    }catch(err){
+        res.status(404).json({message: err.message});
+    }
+}
+
+
+
 export const createTimesheet = async (req, res) => {
     try{
         const employee = await Employee.find({employeeNumber: req.body.employeeNumber});
@@ -28,6 +40,7 @@ export const createTimesheet = async (req, res) => {
             firstName: employee[0].firstName,
             lastName: employee[0].lastName,
             employeeNumber: employee[0].employeeNumber,
+            periodStarting: req.body.periodStarting,
             periodEnding: req.body.periodEnding,
             friday1: req.body.friday1,
             saturday1: req.body.saturday1,
