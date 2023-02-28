@@ -24,7 +24,6 @@ const TimesheetWidget = ({
     wednesday2,
     thursday2,
 }) => {
-    console.log(lastName)
     return (
         <TimesheetWrapper key={_id}>
             <Box

@@ -26,10 +26,6 @@ const TimesheetsWidget = ({userId}) => {
         getEmployeeTimesheets();
     }, []) //eslint-disable-line react-hooks/exhaustive-deps
 
-    console.log(userId)
-    console.log(timesheets)
-    // even when i go to Ira's it gives me kristines timesheet
-    // why am i looping through one timesheet instead of multiple?
     return (
         <>
         {Object.values(timesheets).map(
